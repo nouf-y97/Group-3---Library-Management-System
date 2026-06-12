@@ -11,10 +11,6 @@ class Book:
     def info(self): 
         return (self.title, self.author, self.year) 
  
-    # def display(self): 
-    #     status = "Borrowed" if self.is_borrowed else "Available" 
- 
-    #     return f"{self.title} by {self.author} ({self.year}) - {status}" 
  
     def display(self): 
         status = "Borrowed" if self.is_borrowed else "Available" 

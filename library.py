@@ -32,40 +32,46 @@ class Library:
     def register_member(self):
         name = input("Name: ")
 
-        try:
-            member_id = int(input("Member ID: "))
-        except ValueError:
-            print("Invalid ID")
-            return
+        while True:
+            member_id = input("Member ID: ")
+            try:
+                member_id = int(member_id)
+                break
+            except ValueError:
+                print("Invalid ID")
+                
 
         if member_id in self.members:                       
-            print("Member already exists")
-            return
-
-        member_type = input("Type (student/staff): ")
-
-        match member_type.lower():
-            case "student":
-                new_member = StudentMember(name, member_id) 
-                print("✓ Student member registered!")
-
-            case "staff":
-                new_member = StaffMember(name, member_id) 
-                print("✓ Staff member registered!")  
-
-            case _:
-                print("Invalid type")
+                print("Member already exists")
                 return
+
+        while True:
+            member_type = input("Type (student/staff): ")
+            match member_type.lower():
+                case "student":
+                    new_member = StudentMember(name, member_id) 
+                    print("✓ Student member registered!")
+                    break
+
+                case "staff":
+                    new_member = StaffMember(name, member_id) 
+                    print("✓ Staff member registered!")  
+                    break
+                case _:
+                    print("Please enter valid input")
+                    continue
 
         self.members[member_id] = new_member              
 
 # 3
-    def borrow_book(self):    
-        try:
-            member_id = int(input("Member ID: "))
-        except ValueError:
-            print("Invalid ID")
-            return
+    def borrow_book(self):  
+        while True:
+            try:
+                member_id = int(input("Member ID: "))
+                break
+            except ValueError:
+                print("Invalid ID, Try again")
+                
 
         if member_id not in self.members:
             print("Member not found")

@@ -25,7 +25,7 @@ class Library:
 
         self.books.append(book)
         self.genres.add(genre)
-        print(book.display())
+        book.display()
         return print("✓ Book added!")
 
 # 2
@@ -141,15 +141,12 @@ class Library:
     def search(self):               
         keyword = input("Enter keyword: ")
 
-        found = False
-
         for book in self.books:
             if keyword.lower() in book.title.lower():
                 book.display()
-                found = True
-
-        if not found:
-            print("No books match that keyword")
+                break             
+            else:
+                print("No books match that keyword")
 
 #6
     def show_all(self):

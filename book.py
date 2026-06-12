@@ -14,11 +14,11 @@ class Book:
  
     def display(self): 
         status = "Borrowed" if self.is_borrowed else "Available" 
-        return f""" 
+        print(f""" 
         Title : {self.title} 
         Author: {self.author} 
         Year  : {self.year} 
         ISBN  : {self.isbn} 
         Genre : {self.genre} 
         Status: {status}
-        """
+        """)

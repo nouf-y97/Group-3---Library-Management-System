@@ -184,6 +184,22 @@ Unique Genres: {length_of_genres} , {genre_names}\nTotal Late Fees: {total_late_
 
 lib = Library()
 
+lib.books.append(Book("Clean Code", "Robert Martin", 2008, "111-1111", "Programming"))
+lib.books.append(Book("Python Basics", "John Smith", 2021, "222-2222", "Programming"))
+lib.books.append(Book("Data Science", "Ahmed Ali", 2020, "333-3333", "Technology"))
+lib.books.append(Book("The Alchemist", "Paulo Coelho", 1988, "444-4444", "Novel"))
+lib.books.append(Book("Atomic Habits", "James Clear", 2018, "555-5555", "Self Development"))
+
+for b in lib.books:
+
+    lib.genres.add(b.genre)
+
+lib.members[101] = StudentMember("Dalal", 101)
+lib.members[102] = StudentMember("Afnan", 102)
+lib.members[103] = StudentMember("Nouf", 103)
+lib.members[201] = StaffMember("Ahmed", 201)
+lib.members[202] = StaffMember("Khalid", 202)
+lib.members[203] = StaffMember("Reem", 203)
 
 while True:
     print("\n=== LIBRARY ===")

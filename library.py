@@ -147,6 +147,7 @@ class Library:
                 break             
             else:
                 print("No books match that keyword")
+                break
 
 #6
     def show_all(self):

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskly | Calendar</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">
+        <i class="fa-solid fa-list-check"></i>
+        <span>Taskly</span>
+    </div>
+
+    <nav class="navbar">
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+        <a href="{{ url_for('tasks') }}">Calendar</a>
+    </nav>
+</header>
+
+<div class="calendar-page">
+
+    <div class="calendar-header">
+        <h1>June 2026</h1>
+        <a href="#" class="add-task-btn">
+            <i class="fa-solid fa-plus"></i>
+            Add Task
+        </a>
+    </div>
+
+    <div class="calendar">
+
+        <div class="day-name">Sun</div>
+        <div class="day-name">Mon</div>
+        <div class="day-name">Tue</div>
+        <div class="day-name">Wed</div>
+        <div class="day-name">Thu</div>
+        <div class="day-name">Fri</div>
+        <div class="day-name">Sat</div>
+
+        <div class="day empty"></div>
+        <div class="day">
+            <span class="date">1</span>
+            <p class="task">Study Flask</p>
+        </div>
+        <div class="day">
+            <span class="date">2</span>
+        </div>
+        <div class="day">
+            <span class="date">3</span>
+            <p class="task high">Project Design</p>
+        </div>
+        <div class="day">
+            <span class="date">4</span>
+        </div>
+        <div class="day">
+            <span class="date">5</span>
+            <p class="task">Meeting</p>
+        </div>
+        <div class="day">
+            <span class="date">6</span>
+        </div>
+
+        <div class="day"><span class="date">7</span></div>
+        <div class="day"><span class="date">8</span></div>
+        <div class="day">
+            <span class="date">9</span>
+            <p class="task done">HTML Done</p>
+        </div>
+        <div class="day"><span class="date">10</span></div>
+        <div class="day">
+            <span class="date">11</span>
+            <p class="task high">Database</p>
+        </div>
+        <div class="day"><span class="date">12</span></div>
+        <div class="day"><span class="date">13</span></div>
+
+        <div class="day"><span class="date">14</span></div>
+        <div class="day">
+            <span class="date">15</span>
+            <p class="task">CSS Review</p>
+        </div>
+        <div class="day"><span class="date">16</span></div>
+        <div class="day"><span class="date">17</span></div>
+        <div class="day">
+            <span class="date">18</span>
+            <p class="task">Presentation</p>
+        </div>
+        <div class="day"><span class="date">19</span></div>
+        <div class="day"><span class="date">20</span></div>
+
+        <div class="day"><span class="date">21</span></div>
+        <div class="day"><span class="date">22</span></div>
+        <div class="day">
+            <span class="date">23</span>
+            <p class="task high">Final Submit</p>
+        </div>
+        <div class="day"><span class="date">24</span></div>
+        <div class="day"><span class="date">25</span></div>
+        <div class="day"><span class="date">26</span></div>
+        <div class="day"><span class="date">27</span></div>
+
+        <div class="day"><span class="date">28</span></div>
+        <div class="day"><span class="date">29</span></div>
+        <div class="day"><span class="date">30</span></div>
+        <div class="day empty"></div>
+        <div class="day empty"></div>
+        <div class="day empty"></div>
+        <div class="day empty"></div>
+
+    </div>
+
+    <div class="notes-box">
+        <h2>
+            <i class="fa-solid fa-note-sticky"></i>
+            Notes
+        </h2>
+
+        <textarea placeholder="Write your notes here..."></textarea>
+    </div>
+
+</div>
+
+<footer class="footer">
+    © 2026 Taskly | Manage your tasks easily 💜
+</footer>
+
+</body>
+</html>

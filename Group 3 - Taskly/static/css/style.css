@@ -1,0 +1,508 @@
+/* ==========================
+   TASKLY STYLE
+========================== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body{
+    min-height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f1f1f5;
+
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+/* ================= Header ================= */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 40px;
+
+    background: #6d28d9;
+
+    z-index: 1000;
+}
+
+.logo{
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+}
+
+.navbar a:hover{
+    color: #e9d5ff;
+}
+
+/* ================= Footer ================= */
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+    padding: 15px;
+
+    background: #6d28d9;
+    color: white;
+
+    font-size: 14px;
+}
+
+/* ================= Login / Auth Box ================= */
+
+.login-box{
+    width: 430px;
+    padding: 40px;
+    border-radius: 25px;
+
+    background: white;
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+
+    text-align: center;
+    color: #111827;
+}
+
+.login-box h1{
+    font-size: 42px;
+    margin-bottom: 30px;
+    color: #111827;
+}
+
+/* ================= User Icon ================= */
+
+.user-icon{
+    width: 110px;
+    height: 110px;
+
+    margin: 0 auto 20px;
+
+    background: #7c3aed;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 8px 20px rgba(124,58,237,.3);
+}
+
+.user-icon i{
+    font-size: 50px;
+    color: white;
+}
+
+/* ================= Inputs ================= */
+
+.input-box{
+    position: relative;
+    margin: 18px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 52px;
+
+    border-radius: 30px;
+    border: 1px solid #d1d5db;
+
+    background: white;
+    outline: none;
+
+    padding: 0 50px 0 20px;
+
+    color: #111827;
+    font-size: 15px;
+}
+
+.input-box input::placeholder{
+    color: #6b7280;
+}
+
+.input-box i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #6d28d9;
+}
+
+/* ================= Options ================= */
+
+.options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 15px 0 20px;
+
+    font-size: 14px;
+    color: #111827;
+}
+
+.options label{
+    color: #111827;
+}
+
+.options a{
+    color: #6d28d9;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.options a:hover{
+    text-decoration: underline;
+}
+
+/* ================= Button ================= */
+
+.btn{
+    width: 100%;
+    height: 50px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #7c3aed;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover{
+    background: #6d28d9;
+    transform: scale(1.02);
+}
+
+/* ================= Register Text ================= */
+
+.register{
+    margin-top: 25px;
+    color: #111827;
+}
+
+.register a{
+    color: #6d28d9;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.register a:hover{
+    text-decoration: underline;
+}
+
+/* ================= Calendar Page ================= */
+
+.calendar-page{
+    width: 90%;
+    max-width: 1100px;
+
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    color: #111827;
+}
+
+.calendar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.calendar-header h1{
+    font-size: 38px;
+    color: #111827;
+}
+
+.add-task-btn{
+    background: #7c3aed;
+    color: white;
+
+    padding: 12px 22px;
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.calendar{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+
+    padding: 20px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.day-name{
+    text-align: center;
+    font-weight: bold;
+    padding: 12px;
+    color: #6d28d9;
+}
+
+.day{
+    min-height: 110px;
+    padding: 10px;
+
+    border-radius: 15px;
+
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+
+    color: #111827;
+}
+
+.day.empty{
+    background: #f3f4f6;
+}
+
+.date{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.task{
+    background: #ede9fe;
+    color: #4c1d95;
+
+    padding: 6px 8px;
+    border-radius: 10px;
+
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.task.high{
+    background: #f5d0fe;
+    color: #701a75;
+}
+
+.task.done{
+    background: #dcfce7;
+    color: #166534;
+
+    text-decoration: line-through;
+}
+
+.notes-box{
+    margin-top: 25px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.notes-box h2{
+    margin-bottom: 15px;
+    color: #111827;
+}
+
+.notes-box textarea{
+    width: 100%;
+    height: 130px;
+
+    border-radius: 15px;
+    border: 1px solid #d1d5db;
+    outline: none;
+
+    padding: 15px;
+
+    resize: none;
+    font-size: 15px;
+
+    color: #111827;
+}
+
+/* ================= Other Pages ================= */
+
+.page-container,
+.form-box,
+.details-box,
+.profile-box{
+    width: 90%;
+    max-width: 800px;
+
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    color: #111827;
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+
+    text-align: center;
+}
+
+.page-container h1,
+.form-box h1,
+.details-box h1,
+.profile-box h1{
+    margin-bottom: 25px;
+    color: #111827;
+}
+
+.cards{
+    display: flex;
+    gap: 20px;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 200px;
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+}
+
+.card i{
+    font-size: 35px;
+    margin-bottom: 10px;
+    color: #7c3aed;
+}
+
+.card p{
+    font-size: 28px;
+    font-weight: bold;
+
+    margin-top: 10px;
+}
+
+.btn-link{
+    display: inline-block;
+
+    margin: 8px;
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    background: #7c3aed;
+    color: white;
+
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-link:hover{
+    background: #6d28d9;
+}
+
+.form-box textarea,
+.form-box select,
+.date-input{
+    width: 100%;
+
+    margin: 12px 0;
+    padding: 14px;
+
+    border-radius: 15px;
+    border: 1px solid #d1d5db;
+
+    outline: none;
+
+    font-size: 15px;
+
+    color: #111827;
+    background: white;
+}
+
+.form-box textarea{
+    height: 120px;
+    resize: none;
+}
+
+.details-box p,
+.profile-box p{
+    text-align: left;
+    margin: 15px 0;
+
+    font-size: 18px;
+    color: #111827;
+}
+
+.actions{
+    margin-top: 25px;
+}
+
+.profile-icon{
+    font-size: 90px;
+    margin-bottom: 15px;
+
+    color: #7c3aed;
+}
+/* Login Page Only */
+
+.login-page{
+    min-height: 100vh;
+    background: #111827;
+}
+
+.login-page .header,
+.login-page .footer{
+    display: none;
+}

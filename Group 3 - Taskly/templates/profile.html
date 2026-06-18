@@ -1,28 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Taskly | Profile</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
-<body>
-<header class="header">
-    <div class="logo"><i class="fa-solid fa-list-check"></i><span>Taskly</span></div>
-    <nav class="navbar">
-        <a href="{{ url_for('dashboard') }}">Dashboard</a>
-        <a href="{{ url_for('tasks') }}">Tasks</a>
-        <a href="{{ url_for('add_task') }}">Add Task</a>
-    </nav>
-</header>
+{% extends "layout.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
 <div class="profile-box">
     <i class="fa-solid fa-circle-user profile-icon"></i>
+
     <h1>User Profile</h1>
-    <p><strong>Name:</strong> Dalal</p>
-    <p><strong>Email:</strong> dalal@example.com</p>
-    <p><strong>Username:</strong> dalal_taskly</p>
+
+    <p><strong>Username: </strong>{{user.username}}</p>
+    <p><strong>Email: </strong>{{user.email}}</p>
+    
+
     <button class="btn">Edit Profile</button>
 </div>
-<footer class="footer">© 2026 Taskly | Manage your tasks easily 💜</footer>
-</body>
-</html>
+
+{% endblock %}

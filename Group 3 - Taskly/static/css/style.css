@@ -506,3 +506,16 @@ body{
 .login-page .footer{
     display: none;
 }
+
+.btn{
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 30px;
+    background: linear-gradient(90deg,#6a5cff,#8b5cf6);
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+}

@@ -1,36 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Taskly | Edit Task</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
-<body>
-<header class="header">
-    <div class="logo"><i class="fa-solid fa-list-check"></i><span>Taskly</span></div>
-    <nav class="navbar">
-        <a href="{{ url_for('dashboard') }}">Dashboard</a>
-        <a href="{{ url_for('tasks') }}">Tasks</a>
-    </nav>
-</header>
+{% extends "layout.html" %}
+
+{% block title %}Edit Task{% endblock %}
+
+{% block content %}
+
 <div class="form-box">
-    <h1>Edit Task</h1>
-    <form>
+    <h1><i class="fa-solid fa-pen"></i> Edit Task</h1>
+
+    <form method="POST">
         <div class="input-box">
-            <input type="text" value="Study Flask" required>
-            <i class="fa-solid fa-pen"></i>
+            <input type="text" name="title" value="Study Flask" required>
         </div>
-        <textarea>Complete Flask routes and templates</textarea>
-        <select>
-            <option>Low Priority</option>
-            <option selected>Medium Priority</option>
-            <option>High Priority</option>
+
+        <textarea name="description">Complete Flask pages and routes</textarea>
+
+        <select name="priority">
+            <option value="Low">🟢 Low Priority</option>
+            <option value="Medium" selected>🟡 Medium Priority</option>
+            <option value="High">🔴 High Priority</option>
         </select>
-        <input type="date" class="date-input" value="2026-06-20">
-        <button class="btn">Update Task</button>
+
+        <input type="date" name="due_date" class="date-input" value="2026-06-20">
+
+        <button type="submit" class="btn">Update Task</button>
     </form>
 </div>
-<footer class="footer">© 2026 Taskly | Manage your tasks easily 💜</footer>
-</body>
-</html>
+
+{% endblock %}

@@ -4,32 +4,36 @@
 
 {% block content %}
 
-<div class="page-container">
+<div class="dashboard-pro">
 
-    <h1>Welcome to Taskly 💜</h1>
-    <p>Hello, {{ session.get("username") }}! Here is your task summary.</p>
+    <div class="dashboard-header">
+        <div class="dashboard-icon">
+            <i class="fa-solid fa-chart-line"></i>
+        </div>
 
-    <div class="cards">
+        <h1>Welcome to Taskly 💜</h1>
+        <p>Hello, {{ session.get("username") }}! Track your progress today.</p>
+    </div>
 
-        <div class="card">
+    <div class="dashboard-stats">
+
+        <div class="stat-box">
             <i class="fa-solid fa-list-check"></i>
-            <h3>Total Tasks</h3>
-            <p>{{ total_tasks }}</p>
+            <span>Total Tasks</span>
+            <strong>{{ total_tasks }}</strong>
         </div>
 
-        <div class="card">
+        <div class="stat-box">
             <i class="fa-solid fa-circle-check"></i>
-            <h3>Completed</h3>
-            <p>{{ completed_tasks }}</p>
+            <span>Completed</span>
+            <strong>{{ completed_tasks }}</strong>
         </div>
-
-       
 
     </div>
 
-    <div class="actions">
-        <a href="{{ url_for('tasks') }}" class="btn-link">View Tasks</a>
-        <a href="{{ url_for('add_task') }}" class="btn-link">Add Task</a>
+    <div class="dashboard-actions">
+        <a href="{{ url_for('tasks') }}">View Tasks</a>
+        <a href="{{ url_for('add_task') }}">Add Task</a>
     </div>
 
 </div>

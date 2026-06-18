@@ -29,11 +29,30 @@
 
     {% if session.get('user_id') %}
 
-    <a href="{{ url_for('dashboard') }}">Dashboard</a>
-    <a href="{{ url_for('tasks') }}">Tasks</a>
-    <a href="{{ url_for('add_task') }}">Add Task</a>
-    <a href="{{ url_for('profile') }}">Profile</a>
-    <a href="{{ url_for('logout') }}">Logout</a>
+   <a href="{{ url_for('dashboard') }}"
+       class="{% if request.endpoint == 'dashboard' %}active{% endif %}">
+       Dashboard
+    </a>
+
+    <a href="{{ url_for('tasks') }}"
+       class="{% if request.endpoint == 'tasks' %}active{% endif %}">
+       Tasks
+    </a>
+
+    <a href="{{ url_for('add_task') }}"
+       class="{% if request.endpoint == 'add_task' %}active{% endif %}">
+       Add Task
+    </a>
+
+    <a href="{{ url_for('profile') }}"
+       class="{% if request.endpoint == 'profile' %}active{% endif %}">
+       Profile
+    </a>
+
+   <a href="{{ url_for('logout') }}" class="logout-btn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+    </a>
 
     {% else %}
 

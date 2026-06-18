@@ -6,9 +6,6 @@ app = Flask(__name__)
 app.secret_key = "taskly-secret-key"
 DATABASE = "taskly.db"
 
-
-# ================= DATABASE CONNECTION =================
-
 def get_db():
     conn = sqlite3.connect("taskly.db")
     conn.row_factory = sqlite3.Row
@@ -45,7 +42,6 @@ conn.close()
 print("Passwords updated successfully!")
 
 print("Passwords updated successfully!")
-# ================= AUTH ROUTES =================
 
 @app.route("/", methods=["GET", "POST"])
 def login():
@@ -111,8 +107,6 @@ def logout():
     return redirect(url_for("login"))
 
 
-# ================= PAGES ROUTES =================
-
 @app.route("/dashboard")
 def dashboard():
     if "user_id" not in session:
@@ -177,7 +171,7 @@ def add_task():
             (session["user_id"],)
         ).fetchone()
 
-        category_id = category["user_id"] if category else None
+        category_id = category["id"] if category else None
 
         conn.execute("""
         INSERT INTO tasks (title, description, priority, due_date, status, category_id, user_id)
@@ -291,9 +285,6 @@ def profile():
     conn.close()
 
     return render_template("profile.html", user=user)
-
-
-# ================= RUN APP =================
 
 if __name__ == "__main__":
     app.run(debug=True)

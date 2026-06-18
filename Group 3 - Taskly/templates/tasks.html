@@ -4,47 +4,66 @@
 
 {% block content %}
 
-<div class="calendar-page">
+<div class="tasks-page">
 
-    <div class="calendar-header">
-        <h1>My Tasks</h1>
+    <div class="tasks-header">
+        <div>
+            <h1>My Tasks</h1>
+            <p>View, manage, and organize your daily tasks.</p>
+        </div>
 
         <a href="{{ url_for('add_task') }}" class="add-task-btn">
-            + Add Task
+            <i class="fa-solid fa-plus"></i>
+            Add Task
         </a>
     </div>
 
-    <div class="calendar">
+    <div class="tasks-grid">
 
         {% if tasks %}
 
             {% for task in tasks %}
 
-                <div class="day">
-                    <span class="date">
+            <a href="{{ url_for('task_details', task_id=task['id']) }}" class="task-card-pro">
+
+                <div class="task-card-top">
+                    <span class="task-date">
+                        <i class="fa-solid fa-calendar-days"></i>
                         {{ task["due_date"] }}
                     </span>
 
-                    <a href="{{ url_for('task_details', task_id=task['id']) }}"
-                       class="task
-                       {% if task['priority'] == 'High' %} high {% endif %}
-                       {% if task['status'] == 'Completed' %} done {% endif %}">
-                        {{ task["title"] }}
-                    </a>
+                    <span class="priority-badge {{ task['priority']|lower }}">
+                        {{ task["priority"] }}
+                    </span>
                 </div>
+
+                <h3>{{ task["title"] }}</h3>
+
+                <p>{{ task["description"] }}</p>
+
+                <div class="task-card-bottom">
+                    <span class="status-badge">
+                        {{ task["status"] }}
+                    </span>
+                </div>
+
+            </a>
 
             {% endfor %}
 
         {% else %}
 
-            <p>No tasks yet.
-             Add your first task 💜</p>
+            <div class="empty-tasks">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <h3>No tasks yet</h3>
+                <p>Add your first task and start organizing your day.</p>
+            </div>
 
         {% endif %}
 
     </div>
 
-    <div class="notes-box">
+    <div class="notes-card">
         <h2>
             <i class="fa-solid fa-note-sticky"></i>
             Notes

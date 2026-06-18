@@ -4,20 +4,75 @@
 
 {% block content %}
 
-<div class="details-box">
-    <h1>Task Details</h1>
+<div class="task-details-card">
 
-    <p><strong>Title:</strong> {{ task.title }}</p>
-    <p><strong>Description:</strong> {{ task.description }}</p>
-    <p><strong>Priority:</strong> {{ task.priority }}</p>
-    <p><strong>Status:</strong> {{ task.status }}</p>
-    <p><strong>Due Date:</strong> {{ task.due_date }}</p>
+    <div class="details-header">
+        <div class="details-icon">
+            <i class="fa-solid fa-circle-info"></i>
+        </div>
 
-    <div class="actions">
-        <a href="{{ url_for('edit_task', task_id=task['id']) }}" class="btn-link">Edit</a>
-        <a href="{{ url_for('delete_task', task_id=task['id']) }}" class="btn-link">Delete</a>
-        <a href="{{ url_for('tasks') }}" class="btn-link">Back</a>
+        <h1>Task Details</h1>
+        <p>View and manage your task information</p>
     </div>
+
+    <div class="details-list">
+
+        <div class="details-row">
+            <i class="fa-solid fa-heading"></i>
+            <div>
+                <span>Title</span>
+                <strong>{{ task["title"] }}</strong>
+            </div>
+        </div>
+
+        <div class="details-row">
+            <i class="fa-solid fa-align-left"></i>
+            <div>
+                <span>Description</span>
+                <strong>{{ task["description"] }}</strong>
+            </div>
+        </div>
+
+        <div class="details-row">
+            <i class="fa-solid fa-flag"></i>
+            <div>
+                <span>Priority</span>
+                <strong>{{ task["priority"] }}</strong>
+            </div>
+        </div>
+
+        <div class="details-row">
+            <i class="fa-solid fa-spinner"></i>
+            <div>
+                <span>Status</span>
+                <strong>{{ task["status"] }}</strong>
+            </div>
+        </div>
+
+        <div class="details-row">
+            <i class="fa-solid fa-calendar-days"></i>
+            <div>
+                <span>Due Date</span>
+                <strong>{{ task["due_date"] }}</strong>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="details-actions">
+        <a href="{{ url_for('edit_task', task_id=task['id']) }}" class="details-btn">
+            <i class="fa-solid fa-pen"></i> Edit
+        </a>
+
+        <a href="{{ url_for('delete_task', task_id=task['id']) }}" class="details-btn delete">
+            <i class="fa-solid fa-trash"></i> Delete
+        </a>
+
+        <button type="button" onclick="history.back()" class="details-btn back">
+            <i class="fa-solid fa-arrow-left"></i> Back
+        </button>
+    </div>
+
 </div>
 
 {% endblock %}

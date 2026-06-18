@@ -4,16 +4,42 @@
 
 {% block content %}
 
-<div class="profile-box">
-    <i class="fa-solid fa-circle-user profile-icon"></i>
+<div class="profile-card">
 
-    <h1>User Profile</h1>
+    <div class="profile-top">
+        <div class="profile-avatar">
+            <i class="fa-solid fa-user"></i>
+        </div>
 
-    <p><strong>Username: </strong>{{user.username}}</p>
-    <p><strong>Email: </strong>{{user.email}}</p>
-    
+        <h1>User Profile</h1>
+        <p>Manage your personal information</p>
+    </div>
 
-    <button class="btn">Edit Profile</button>
+    <div class="profile-info">
+
+        <div class="info-row">
+            <i class="fa-solid fa-user"></i>
+            <div>
+                <span>Username</span>
+                <strong>{{ user["username"] }}</strong>
+            </div>
+        </div>
+
+        <div class="info-row">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+                <span>Email</span>
+                <strong>{{ user["email"] }}</strong>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="#" class="profile-btn">
+        <i class="fa-solid fa-pen"></i>
+        Edit Profile
+    </a>
+
 </div>
 
 {% endblock %}

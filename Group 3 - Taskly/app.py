@@ -41,7 +41,6 @@ conn.close()
 
 print("Passwords updated successfully!")
 
-print("Passwords updated successfully!")
 
 @app.route("/", methods=["GET", "POST"])
 def login():

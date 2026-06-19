@@ -1,5 +1,5 @@
 class Member:
-    def __init__(self, name, member_id):
+    def __init__(self, name, member_id):#يتم استدعاؤها تلقائيًا عند إنشاء كائن جديد من الكلاس
         self.name = name
         self.member_id = member_id
         self.borrowed_books = []
